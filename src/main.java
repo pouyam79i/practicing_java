@@ -4,8 +4,8 @@
 // tiket data
 class tiket_data{
     public double charge = 0;
-    public String tiketType = "";
-    public String intializedTime = "";
+    public String tiketType = "No data";
+    public String intializedTime = "No data";
 }
 
 // thiket machin class
