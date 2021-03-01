@@ -11,7 +11,7 @@ class tiket_data{
 // thiket machin class
 // this contains methods for tiket
 class machin_tiket{
-    public tiket_data tiketData = new tiket_data();
+    private tiket_data tiketData = new tiket_data();
 
     public machin_tiket(double firstCharge, String type){
         tiketData.charge = firstCharge;
