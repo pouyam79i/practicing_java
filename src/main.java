@@ -22,7 +22,6 @@ class machin_tiket{
         System.out.println("Tiket Charge: " + tiketData.charge);
         System.out.println("Tiket Type: " + tiketData.tiketType);
     }
-
 }
 
 // main class
