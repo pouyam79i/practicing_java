@@ -11,17 +11,28 @@ class ComplexNumber{
 
 class ComplexOpration{
 
-    public void plus(ComplexNumber complex_number1, ComplexNumber complex_number2){
-        ComplexNumber result = new ComplexNumber();
-        result.Re = complex_number1.Re + complex_number1.Re;
-        result.Im = complex_number1.Im + complex_number2.Im;
-        System.out.print(result.Re);
-        if(result.Im<0){
-            System.out.println(result.Im + "i");
+    private ComplexNumber result = new ComplexNumber();
+
+    private void printComplex(ComplexNumber complex_number){
+        System.out.print(complex_number.Re);
+        if(complex_number.Im<0){
+            System.out.println(complex_number.Im + "i");
         }
         else{
-            System.out.println("+" + result.Im + "i");
+            System.out.println("+" + complex_number.Im + "i");
         }
+    }
+
+    public void plus(ComplexNumber complex_number1, ComplexNumber complex_number2){
+        result.Re = complex_number1.Re + complex_number2.Re;
+        result.Im = complex_number1.Im + complex_number2.Im;
+        printComplex(result);
+    }
+
+    public void minus(ComplexNumber complex_number1, ComplexNumber complex_number2){
+        result.Re = complex_number1.Re - complex_number2.Re;
+        result.Im = complex_number1.Im - complex_number2.Im;
+        printComplex(result);
     }
 
 }
