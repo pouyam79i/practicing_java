@@ -8,13 +8,13 @@ import java.util.Scanner;
 import java.lang.Math;
 
 class ComplexNumber{
-    public int Re;
-    public int Im;
+    public double Re;
+    public double Im;
     Scanner scan = new Scanner(System.in);
 
     public void readComplex(){
-        Re = scan.nextInt();
-        Im = scan.nextInt();
+        Re = scan.nextDouble();
+        Im = scan.nextDouble();
     }
 
     public void printComplex(){
