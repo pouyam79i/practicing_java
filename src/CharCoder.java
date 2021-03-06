@@ -18,6 +18,7 @@ public class CharCoder {
 
         char temp;
         String str;
+        String Answer = "";
         for(int i = 0; i < charArray.length; i++){
             temp =(char)(charArray[i] ^ codeFormater);                  // XOR opration on each char
             str = Integer.toString(temp, 2);
@@ -27,10 +28,10 @@ public class CharCoder {
                     str = "0" + str;
                 }
             }
-            System.out.print(str);                                      // printing process
+            Answer = Answer + str;                                      // Gathering the answer
             if((i+1) != charArray.length)
-                System.out.print(" ");
+                Answer = Answer + " ";
         }
+        System.out.println(Answer);                                     // printing process
     }
-
 }
