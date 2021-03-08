@@ -1,11 +1,14 @@
 /*
-Coded by Pouya Mohamadi
+Coded by Pouya Mohammadi
 Uni ID: 9829039
-tel ID: @pouya_moh
+Email: pouyamohammadyirbu@gmail.com
+
+Question 5
  */
 
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.ArrayList;
 
 class ComplexNumber{
     public double Re;
@@ -18,20 +21,20 @@ class ComplexNumber{
     }
 
     public void printComplex(){
-        System.out.print(Re);
+        System.out.printf("%.2f", Re);
         if(Im<0){
-            System.out.println(Im + "i");
+            System.out.printf("%.2fi", Im);
         }
         else{
             if(Im != 1) {
-                System.out.println("+" + Im + "i");
+                System.out.printf("+%.2fi", Im);
             }
             else{
-                System.out.println("+" + "i");
+                System.out.print("+" + "i");
             }
         }
+        System.out.println("");
     }
-
 }
 
 class ComplexOpration{
@@ -60,8 +63,8 @@ class ComplexOpration{
     public void divide(ComplexNumber complex_number1, ComplexNumber complex_number2){
         result.Re = (complex_number1.Re * complex_number2.Re) + (complex_number1.Im * complex_number2.Im);
         result.Im = (complex_number1.Im * complex_number2.Re) - (complex_number1.Re * complex_number2.Im) ;
-        int temp;
-        temp = (int)Math.sqrt(Math.pow(complex_number2.Re, 2) + Math.pow(complex_number2.Im, 2));
+        double temp;
+        temp = (Math.pow(complex_number2.Re, 2) + Math.pow(complex_number2.Im, 2));
         result.Re = result.Re / temp;
         result.Im = result.Im / temp;
         result.printComplex();
@@ -71,14 +74,45 @@ class ComplexOpration{
 
 public class Complex {
     public static void main(String[] args) {
+
         ComplexNumber CN1 = new ComplexNumber();
         ComplexNumber CN2 = new ComplexNumber();
+
+        ComplexOpration oprator = new ComplexOpration();
+
+        ArrayList<String> commands = new ArrayList<String>();
+        Scanner sc = new Scanner(System.in);
+
         CN1.readComplex();
         CN2.readComplex();
-        ComplexOpration complexOprator = new ComplexOpration();
-        complexOprator.plus(CN1, CN2);
-        complexOprator.minus(CN1, CN2);
-        complexOprator.product(CN1, CN2);
-        complexOprator.divide(CN1, CN2);
+
+        int Length = 0;
+        String temp = "";
+        do{
+
+            temp = sc.nextLine();
+            if((temp.compareTo("+") == 0 || temp.compareTo("-") == 0) || (temp.compareTo("*") == 0 || temp.compareTo("/") == 0)) {
+                commands.add(temp);
+                Length++;
+            }
+        }while (temp.compareTo("#") != 0);
+
+        for (int i = 0; i < Length; i++){
+            temp = commands.get(i);
+
+            if(temp.compareTo("+") == 0){
+                oprator.plus(CN1, CN2);
+            }
+            else if(temp.compareTo("-") == 0){
+                oprator.minus(CN1, CN2);
+            }
+            else if(temp.compareTo("*") == 0){
+                oprator.product(CN1, CN2);
+            }
+            else if(temp.compareTo("/") == 0){
+                oprator.divide(CN1, CN2);
+            }
+        }
+
     }
 }
