@@ -5,7 +5,7 @@ Tel ID: @Pouya_Moh
  */
 package APworkshop;
 
-
+// Initializing student object and setting important info. in Constructor
 public class Student {
     private String firstName; // First Name of Student
     private String lastName;  // Last Name of Student
@@ -56,6 +56,7 @@ public class Student {
         return grade;
     }
 
+    // printing full information of student
     public void printStudentInfo() {
         System.out.println("Full Name of Student: " + firstName + " " + lastName + "\nStudent ID: " + ID + "\nGrade: " + grade);
     }
