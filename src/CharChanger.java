@@ -10,7 +10,7 @@ class CoupleWordAnalysis{
     private String str2 = "";
     private int[] Length = {0, 0};
     private int[] sameCharsInEachWords = {0, 0};
-    private int sameCharsIntotal = 0;
+    private int sameCharsIntotalNoRepeat = 0;
     private int diffranceInCharNumber = 0;
 
     public int totalDiffrance = 0;
@@ -25,6 +25,13 @@ class CoupleWordAnalysis{
     public void CharAnalysis(void){
         char[] charArray1 = str1.toCharArray();
         char[] charArray2 = str2.toCharArray();
+        for(int i = 0; i < charArray1.length; i++){
+            char temp = charArray1[i];
+            for(int j = 0; j < charArray1.length; j++){
+
+            }
+            for(int j = 0; j < charArray2; j++)
+        }
      }
 
 
