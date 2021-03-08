@@ -63,7 +63,7 @@ public class Lab {
     // prints Lab Information
     public void printLabInfo(){
         System.out.println("");
-        System.out.println("###Lab Info\nName: " + labName + "\nDepartment of: " + department);
+        System.out.println("###Lab Info\nName: " + labName + "\nDepartment of " + department);
         System.out.println("Total Capacity: " + labCapacity);
         System.out.println("Lab off Day: " + offDay);
         System.out.println("**General look");
