@@ -12,6 +12,11 @@ public class Student {
     private  String ID;  // University ID of Student
     private int grade;  //
 
+    public Student(String fName, String lName, String id){
+        setFirstName(fName);
+        setLasttName(lName);
+        setID(id);
+    }
 
 // Setter methods:
     // Setter of First Name
@@ -51,6 +56,8 @@ public class Student {
         return grade;
     }
 
-
+    public void printStudentInfo() {
+        System.out.println("Full Name of Student: " + firstName + " " + lastName + "\nStudent ID: " + ID + "\nGrade: " + grade);
+    }
 
 }
