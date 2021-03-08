@@ -49,7 +49,7 @@ public void printLabInfo(){
     System.out.println("");
     System.out.println("###Lab Info\nName: " + labName + "\nDepartment of: " + department);
     System.out.println("Total Capacity: " + labCapacity);
-    System.out.println("**General look:");
+    System.out.println("**General look");
     System.out.println("Participation: " + currentSize + "\nAvarage Grade: " + avgGrade);
     System.out.println("");
 }
