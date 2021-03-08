@@ -2,7 +2,11 @@
 Coded by Pouya Mohammadi
 Uni ID: 9829039
 Tel ID: @Pouya_Moh
+
+Student Class in APworkshop package
  */
+
+
 package APworkshop;
 
 // Initializing student object and setting important info. in Constructor
@@ -11,8 +15,9 @@ public class Student {
     private String firstName; // First Name of Student
     private String lastName;  // Last Name of Student
     private  String ID;  // University ID of Student
-    private double grade;  //
+    private double grade;  // Student's Grade
 
+    // Student Constructor
     public Student(String firstName, String lastName, String ID, int grade){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,25 +25,21 @@ public class Student {
         this.grade = grade;
     }
 
-// Setter methods:
-    // Setter of First Name
+    // Setter methods:
     public void setFirstName(String input){
         firstName = input;
     }
-    // Setter of Last Name
     public void setLasttName(String input){
         lastName = input;
     }
-    // Setter of University ID
     public void setID(String input){
         ID = input;
     }
-    // Setter of Grade
     public void setGrade(int input){
         grade = input;
     }
 
-
+    // Getter Methods
     public String getFirstName() {
         return firstName;
     }
