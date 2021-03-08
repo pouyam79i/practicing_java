@@ -1,3 +1,11 @@
+/*
+Coded by Pouya Mohammadi
+Uni ID: 9829039
+Email: pouyamohammadyirbu@gmail.com
+
+Question 4
+ */
+
 class FindMistake {
 
 
@@ -22,7 +30,7 @@ class FindMistake {
     }
 
     public static void main(String args[]) {
-        int[] arr = { 12, 34, 54, 2, 3};
+        int[] arr = {12 , 34, 54, 2, 3};
         System.out.println("Array before sorting");
         printArray(arr);
         sort(arr);
