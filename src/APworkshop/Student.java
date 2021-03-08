@@ -13,11 +13,11 @@ public class Student {
     private  String ID;  // University ID of Student
     private double grade;  //
 
-    public Student(String fName, String lName, String id){
-        setFirstName(fName);
-        setLasttName(lName);
-        setID(id);
-        grade = 0;
+    public Student(String firstName, String lastName, String ID, int grade){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ID = ID;
+        this.grade = grade;
     }
 
 // Setter methods:

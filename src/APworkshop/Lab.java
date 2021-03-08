@@ -6,11 +6,11 @@ public class Lab {
     private String day;
     private String department;
     private String labName = "My lab";
-    private double avgGrade;
+    private double avgGrade = 0;
     private int labCapacity;
     private int currentSize;
 
-    public Lab(int labCapacity, String department, String labName) {
+    public Lab(String department, String labName, int labCapacity) {
         students = new Student[labCapacity];
         currentSize = 0;
         this.department = department;
@@ -21,7 +21,7 @@ public class Lab {
     public void enrollStudent(Student std) {
         if (currentSize < labCapacity)
         {
-            students[currentSize + 1] = std;
+            students[currentSize] = std;
             currentSize++;
             updateAvgGrades();
         }
@@ -32,26 +32,26 @@ public class Lab {
 
     private void updateAvgGrades(){
         double temp = 0;
-        for (Student student : students) {
-            temp += student.getGrade();
+        for (int i = 0; i < currentSize; i++) {
+            temp = temp + students[i].getGrade();
         }
-        avgGrade = temp / students.length;
+        avgGrade = temp / currentSize;
     }
 
 public void printStudentsInfo() {
-        int i = 0;
-        for(Student student: students){
-            i++;
-            System.out.println("Student#" + i + " - Last name: " + student.getLastName() + ", ID: " + student.getID() + ", Grade: " + student.getGrade());
+        System.out.println("");
+        for(int i = 0; i < currentSize; i++){
+            System.out.println("Student#" + i + " - Last name: " + students[i].getLastName() + ", ID: " + students[i].getID() + ", Grade: " + students[i].getGrade());
         }
 }
 
 public void printLabInfo(){
-    updateAvgGrades();
-    System.out.println("###Lab Info\nName: " + labName + "\nTotal Capacity: " + labCapacity);
-    System.out.println("Department of " + department);
-    System.out.println("###General look:");
-    System.out.println("Participation: " + currentSize + "\n Avarage Grade: " + avgGrade);
+    System.out.println("");
+    System.out.println("###Lab Info\nName: " + labName + "\nDepartment of: " + department);
+    System.out.println("Total Capacity: " + labCapacity);
+    System.out.println("**General look:");
+    System.out.println("Participation: " + currentSize + "\nAvarage Grade: " + avgGrade);
+    System.out.println("");
 }
 // Setter methods
     public void setStudents(Student[] students) {
