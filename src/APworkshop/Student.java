@@ -10,7 +10,7 @@ public class Student {
     private String firstName; // First Name of Student
     private String lastName;  // Last Name of Student
     private  String ID;  // University ID of Student
-    private int grade;  //
+    private int grade = 0;  //
 
     public Student(String fName, String lName, String id){
         setFirstName(fName);
