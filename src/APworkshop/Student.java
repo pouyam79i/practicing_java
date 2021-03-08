@@ -7,15 +7,17 @@ package APworkshop;
 
 // Initializing student object and setting important info. in Constructor
 public class Student {
+
     private String firstName; // First Name of Student
     private String lastName;  // Last Name of Student
     private  String ID;  // University ID of Student
-    private int grade = 0;  //
+    private double grade;  //
 
     public Student(String fName, String lName, String id){
         setFirstName(fName);
         setLasttName(lName);
         setID(id);
+        grade = 0;
     }
 
 // Setter methods:
@@ -37,24 +39,20 @@ public class Student {
     }
 
 
-
-// Getter methods:
-    // Getter of First Name
-    public String setFirstName(){
+    public String getFirstName() {
         return firstName;
     }
-    // Getter of Last Name
-    public String setLasttName(){
+    public String getLastName() {
         return lastName;
     }
-    // Getter of University ID
-    public String setID(){
+    public String getID() {
         return ID;
     }
-    // Getter of Grade
-    public int setGrade(){
+    public double getGrade() {
         return grade;
     }
+
+
 
     // printing full information of student
     public void printStudentInfo() {
