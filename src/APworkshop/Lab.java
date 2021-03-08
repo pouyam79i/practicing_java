@@ -67,7 +67,8 @@ public class Lab {
         System.out.println("Total Capacity: " + labCapacity);
         System.out.println("Lab off Day: " + offDay);
         System.out.println("**General look");
-        System.out.println("Participation: " + currentSize + "\nAvarage Grade: " + avgGrade);
+        System.out.println("Participation: " + currentSize);
+        System.out.printf("Avarage Grade: %.2f\n", avgGrade);
         System.out.println("");
     }
 
