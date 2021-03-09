@@ -111,6 +111,35 @@ public class CharChanger {
         String str1 = scanner.nextLine();
         String str2 = scanner.nextLine();
 
+        if(str1.compareTo(str2) == 0){
+            System.out.println("false");
+            return;
+        }
+
         CoupleWordAnalysis analyser = new CoupleWordAnalysis(str1, str2);
+
+        if(analyser.differenceInLen >= 2){
+            System.out.println("false");
+            return;
+        }
+        if(analyser.diffInCharsNum[0] >= 2){
+            System.out.println("false");
+            return;
+        }
+        if(analyser.diffInCharsNum[1] >= 2){
+            System.out.println("false");
+            return;
+        }
+        if(analyser.differenceInLen == 0){
+            if(analyser.sameInPlace >=2){
+                System.out.println("false");
+                return;
+            }
+        }
+        if(analyser.differenceInLen == 1){
+
+        }
+
     }
+
 }
