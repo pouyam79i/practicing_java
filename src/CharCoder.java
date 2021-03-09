@@ -1,7 +1,9 @@
 /*
 Coded by Pouya Mohammadi
 Uni ID: 9829039
-Tel ID: @pouya_moh
+Email: pouyamohammadyirbu@gmail.com
+
+Question 6
  */
 
 import java.util.Scanner;
