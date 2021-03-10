@@ -11,22 +11,22 @@ import java.util.Scanner;
 
 class CoupleWordAnalysis{
 
-
+    private int numOfSameChars;
     private char[] str1;
     private char[] str2;
-    private int numOfSameChars;
-
     private int[] repeatedChars = new int[2];
-
     private ArrayList<Character> sameChars = new ArrayList<Character>();
+    private ArrayList<Character> totalCharStr1 = new ArrayList<Character>();
 
-//    public int diffInChar;                                     // number of sameChars, Repitition is not counted. for str1
-//    public int totalChars;                                     // number of chars with No Repitition. for str1
-
+    public int totalChar;
+    public int contrast;
+    public int diffInPlace;
+    public int diffInChar;                                     // number of sameChars, Repitition is not counted. for str1
     public int sameInPlace;                                    // check Number of index that are the same in char and place. for str1
     public int differenceInLen;                                // abstract value of Length difference
     public int[] diffInCharsNum = new int[2];                  // number of different chars in each string
     public int[] Length = new int[2];
+
 
 
     public CoupleWordAnalysis(String input1, String input2){
@@ -49,6 +49,23 @@ class CoupleWordAnalysis{
 
         diffInCharsNum[0] = Length[0] - repeatedChars[0];
         diffInCharsNum[1] = Length[1] - repeatedChars[1];
+
+        diffInPlace = Length[0] - sameInPlace;
+        checkTotalChar(str1);
+        diffInChar = totalChar - numOfSameChars;
+
+        System.out.println("Total Char NO rep: " + totalChar);
+        System.out.println("dif In plac: " + diffInPlace);
+        System.out.println("Diff in char" + diffInChar);
+        System.out.println("same In palce" + sameInPlace);
+        System.out.println("dif In len" + differenceInLen);
+        System.out.println(" dif in num char: " + diffInCharsNum[0] + " - " + diffInCharsNum[1]);
+        System.out.println("Len: " + Length[0] + " - " + Length[1]);
+
+        contrast = totalChar - diffInChar;
+        if(contrast < 0)
+            contrast *= -1;
+
     }
 
     private void limitCharRepeat(char[] input1 , char[] input2){
@@ -102,6 +119,24 @@ class CoupleWordAnalysis{
         }
     }
 
+    private void checkTotalChar(char[] input){
+        int len = 0;
+        boolean isRep = false;
+        for(char c:input){
+            for(int i = 0; i < len; i++){
+                if(totalCharStr1.get(i) == c){
+                    isRep = true;
+                }
+            }
+            if(!isRep){
+                totalCharStr1.add(c);
+                len++;
+            }
+            isRep = false;
+        }
+        totalChar = len;
+    }
+
 }
 
 
@@ -119,33 +154,40 @@ public class CharChanger {
         }
 
         CoupleWordAnalysis analyser = new CoupleWordAnalysis(str1, str2);
+//
+//        if(analyser.contrast == 1 &&){
+//            System.out.println("true");
+//            return;
+//        }
 
         if(analyser.differenceInLen >= 2){
-            System.out.println("false");
-            return;
-        }
-        if(analyser.diffInCharsNum[0] >= 2){
-            System.out.println("false");
-            return;
-        }
-        if(analyser.diffInCharsNum[1] >= 2){
-            System.out.println("false");
-            return;
+            if(analyser.contrast > 1) {
+                System.out.println("false");
+                return;
+            }
         }
         if(analyser.differenceInLen == 0){
-            if(analyser.sameInPlace >=2){
+            if(analyser.sameInPlace >=2 && analyser.diffInChar > 1){
+                System.out.println("false");
+                return;
+            }
+            if(analyser.diffInChar == 1 && (analyser.sameInPlace == 0 && analyser.totalChar > 1)){
+                System.out.println("false");
+                return;
+            }
+            if(analyser.diffInChar == 0 & analyser.diffInPlace > 0){
                 System.out.println("false");
                 return;
             }
         }
         if(analyser.differenceInLen == 1){
-            if(analyser.Length[0] < analyser.Length[1]){
+            if(analyser.Length[0] < analyser.Length[1] && analyser.contrast > 1){
                 if(analyser.diffInCharsNum[0]>0 || (!str2.contains(str1))){
                     System.out.println("false");
                     return;
                 }
             }
-            else if(analyser.Length[0] > analyser.Length[1]){
+            else if(analyser.Length[0] > analyser.Length[1] && analyser.contrast > 1){
                 if(analyser.diffInCharsNum[1] > 0 || (!str1.contains(str2))){
                     System.out.println("false");
                     return;
@@ -153,7 +195,7 @@ public class CharChanger {
             }
         }
 
-    System.out.println("true");
+        System.out.println("true");
 
         /*
        حقیقتا از یه جایی به بعد متوجه این که زیاد نوشتم شدم ولی حوصله ساده کردنشو نداشتم:)
