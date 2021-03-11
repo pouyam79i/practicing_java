@@ -171,18 +171,12 @@ public class charCode2 {
         newWord = input_1.wordInCharArray;
         boolean isFound = false;
         int index = 0;
-        for(char c1:input_1.wordInCharArray){
-            for (char c2:input_2.wordInCharArray){
-                if(c1 != c2){
-                    isFound = true;
+        for(int i = 0; i < input_1.length; i++){
+                if(input_1.wordInCharArray[i] != input_2.wordInCharArray[i]){
+                    newWord[i] = input_2.wordInCharArray[i];
                     break;
                 }
             }
-            if(isFound)
-                break;
-            index++;
-        }
-        newWord[index] = input_2.wordInCharArray[index];
 
         String output = new String(newWord);
         return output;
@@ -230,12 +224,7 @@ public class charCode2 {
                 }
             }
         }
-        else if (oprator.diffCharNum == 0){
-            if(analyser_1.length > analyser_2.length){
-
-            }
-        }
-        else if(oprator.diffCharNum == 2 && analyser_1.length == analyser_2.length){
+        if(oprator.diffCharNum == 2 && analyser_1.length == analyser_2.length){
             if(analyser_1.usedCharNum == analyser_2.usedCharNum){
                 char diifChar = checkDiffChar(analyser_1, analyser_2);
                 String newWord = replaceChar(analyser_1, analyser_2, diifChar);
@@ -245,10 +234,17 @@ public class charCode2 {
                 }
             }
         }
-        else if(analyser_2.length - analyser_1.length == 1){
-            char diffChar = checkDiffChar(analyser_2, analyser_1);
-            String newWord_2 = removeOneChar(analyser_2, analyser_1, diffChar);
-            if (newWord_2.compareTo(word_1) == 0) {
+        if(analyser_1.length == analyser_2.length){
+            String newWord = replaceOneChar(analyser_1, analyser_2);
+            System.out.println(newWord);
+            if(newWord.equals(word_2)){
+                System.out.println("true");
+                return;
+            }
+        }
+        if((analyser_2.length - analyser_1.length) == 1){
+            String newWord = removeOne(analyser_2, analyser_1);
+            if(newWord.equals(word_1)){
                 System.out.println("true");
                 return;
             }
