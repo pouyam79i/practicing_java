@@ -182,7 +182,7 @@ public class charCode2 {
         String word_2 = sc.nextLine();
 
         if(word_1.compareTo(word_2) == 0){
-            System.out.println("false");
+            System.out.println("False");
             return;
         }
 
@@ -196,7 +196,7 @@ public class charCode2 {
             if(analyser_1.length > analyser_2.length){
                 String newWord_1 = removeUnusedChar(analyser_1, diffChar, analyser_2.length);
                 if(newWord_1.compareTo(word_2) == 0){
-                    System.out.println("true");
+                    System.out.println("True");
                     return;
                 }
             }
@@ -204,14 +204,14 @@ public class charCode2 {
                 if(analyser_1.usedCharNum > analyser_2.usedCharNum){
                     String newWord_1 = replaceChar(analyser_1, analyser_2, diffChar);
                     if(newWord_1.compareTo(word_2) == 0){
-                        System.out.println("true");
+                        System.out.println("True");
                         return;
                     }
                 }
                 else {
                     String newWord_1 = replaceOneChar(analyser_1, analyser_2);
                     if(newWord_1.compareTo(word_2) == 0){
-                        System.out.println("true");
+                        System.out.println("True");
                         return;
                     }
                 }
@@ -222,7 +222,7 @@ public class charCode2 {
                 char diifChar = checkDiffChar(analyser_1, analyser_2);
                 String newWord = replaceChar(analyser_1, analyser_2, diifChar);
                 if(newWord.equals(word_2)){
-                    System.out.println("true");
+                    System.out.println("True");
                     return;
                 }
             }
@@ -230,24 +230,24 @@ public class charCode2 {
         if(analyser_1.length == analyser_2.length){
             String newWord = replaceOneChar(analyser_1, analyser_2);
             if(newWord.equals(word_2)){
-                System.out.println("true");
+                System.out.println("True");
                 return;
             }
         }
         if((analyser_2.length - analyser_1.length) == 1){
             String newWord = removeOne(analyser_2, analyser_1);
             if(newWord.equals(word_1)){
-                System.out.println("true");
+                System.out.println("True");
                 return;
             }
         }
         if((analyser_1.length - analyser_2.length) == 1){
             String newWord = removeOne(analyser_1, analyser_2);
             if(newWord.equals(word_2)){
-                System.out.println("true");
+                System.out.println("True");
                 return;
             }
         }
-        System.out.println("false");
+        System.out.println("False");
     }
 }
