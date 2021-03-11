@@ -1,3 +1,12 @@
+/*
+Coded by Pouya Mohammadi
+Uni ID: 9829039
+Email: pouyamohammadyirbu@gmail.com
+
+Question 7
+ */
+
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
