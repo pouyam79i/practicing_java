@@ -93,22 +93,6 @@ public class charCode2 {
         return output;
     }
 
-    private static String removeOneChar(wordAnalysis input,wordAnalysis input2, char unusedChar){
-        char[] str = new char[input2.length];
-        int step = 0;
-        boolean isFound = false;
-        for(char c:input.wordInCharArray){
-            if(c == unusedChar && (!isFound)){
-                isFound = true;
-                continue;
-            }
-            str[step] = c;
-            step++;
-        }
-        String output = new String(str);
-        return output;
-    }
-
     private static String removeOne(wordAnalysis input_1, wordAnalysis input_2){
         char[] newWord = new char[input_2.length];
         int index = 0;
@@ -236,7 +220,6 @@ public class charCode2 {
         }
         if(analyser_1.length == analyser_2.length){
             String newWord = replaceOneChar(analyser_1, analyser_2);
-            System.out.println(newWord);
             if(newWord.equals(word_2)){
                 System.out.println("true");
                 return;
