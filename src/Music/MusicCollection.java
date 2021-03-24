@@ -48,7 +48,7 @@ public class MusicCollection
         artists = new ArrayList<String>();
         favorites = new ArrayList<Boolean>();
         player = new MusicPlayer();
-        type = Type;
+        type = Type.toLowerCase(Locale.ROOT);
         numberOfFiles = 0;
     }
 

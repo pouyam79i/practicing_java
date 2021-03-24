@@ -4,14 +4,51 @@ Main class is coded to run the app
  */
 package Music;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        MusicCollection pop = new MusicCollection();
-        MusicCollection jazz = new MusicCollection();
-        MusicCollection rock = new MusicCollection();
-        MusicCollection country = new MusicCollection();
+
+        MusicCollection pop = new MusicCollection("pop");
+        MusicCollection jazz = new MusicCollection("jazz");
+        MusicCollection rock = new MusicCollection("rock");
+        MusicCollection country = new MusicCollection("country");
+        Scanner scanner = new Scanner(System.in);
+        Menu menu = new Menu();
+
+        String input = "";
+//        String type = "";
+        int index = 0;
+        int time = 0;
+
+        System.out.println(menu.mainMenu);
+
+        while (true){
+            input = scanner.nextLine();
+            input = input.toLowerCase(Locale.ROOT);
+            if(input.equals("1")){
+
+            }
+            else if(input.equals("2")){
+
+            }
+            else if(input.equals("3")){
+
+            }
+            else if(input.equals("4")){
+
+            }
+            else if(input.equals("5")){
+                break;
+            }
+            else {
+                System.out.println("\n\n\n");
+                System.out.println("Wrong input");
+                System.out.println(menu.mainMenu);
+            }
+        }
+
 
     }
 }
