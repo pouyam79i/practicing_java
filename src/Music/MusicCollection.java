@@ -1,6 +1,7 @@
 package Music;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * A class to hold details of audio files.
@@ -232,6 +233,21 @@ public class MusicCollection
         return (index >= 0 && index < tempSize);
     }
 
+    /**
+     * checks if the filename you have entered
+     * between the existing files
+     * @param filename is going to be searched
+     */
+    public void searchFile(String filename){
+        int i;
+        for (i = 0; i < files.size(); i++){
+            if(files.get(i).toLowerCase(Locale.ROOT).contains(filename.toLowerCase(Locale.ROOT)))
+                listFile(i);
+        }
+        if(i == 0){
+            System.out.println("No result :(");
+        }
+    }
     /**
      *
      * @return type of collection
