@@ -11,12 +11,14 @@ public class MusicPlayer
 {
     // The current player. It might be null.
     private boolean isPlaying;
+    private String filename;
     /**
      * Constructor for objects of class MusicFilePlayer
      */
     public MusicPlayer()
     {
         isPlaying = false;
+        filename = "No file";
     }
     
 
@@ -27,13 +29,18 @@ public class MusicPlayer
      */
     public void startPlaying(String filename)
     {
-        System.out.println(filename + " is playing...");
+        this.filename = filename;
+        System.out.println(this.filename + " is playing...");
 		isPlaying = true;
     }
-    
+
+    /**
+     * It stops the player
+     */
     public void stop()
     {
         System.out.println("player is stopped!");
+        filename = "No file";
 		isPlaying = false;
     }
 
@@ -44,4 +51,13 @@ public class MusicPlayer
     public boolean getPlayState() {
         return isPlaying;
     }
+
+    /**
+     * To check the filename which is being played
+     * @return filename
+     */
+    public String getFilename() {
+        return filename;
+    }
+
 }
