@@ -103,6 +103,51 @@ public class MusicCollection
 
 
     /**
+     * chaing music info
+     * @param index get the index of file we want to change
+     * @param artist new artist name
+     */
+    public void editFIle(int index, String artist){
+        if(validIndex(index)) {
+            artists.set(index, artist);
+            System.out.println("Done");
+            System.out.println("The edited music is: ");
+            listFile(index);
+        }else
+            System.out.println("Invalid index");
+    }
+    /**
+     * chaing music info
+     * @param index get the index of file we want to change
+     * @param time new release year
+     */
+    public void editFIle(int index, int time){
+        if(validIndex(index)) {
+            times.set(index, time);
+            System.out.println("Done");
+            System.out.println("The edited music is: ");
+            listFile(index);
+        }else
+            System.out.println("Invalid index");
+    }
+    /**
+     * chaing music info
+     * @param index get the index of file we want to change
+     * @param artist new artist name
+     * @param time new release year
+     */
+    public void editFIle(int index, String artist, int time){
+        if(validIndex(index)) {
+            times.set(index, time);
+            artists.set(index, artist);
+            System.out.println("Done");
+            System.out.println("The edited music is: ");
+            listFile(index);
+        }else
+            System.out.println("Invalid index");
+    }
+
+    /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
      */
