@@ -101,7 +101,6 @@ public class MusicCollection
         numberOfFiles++;
     }
 
-
     /**
      * chaing music info
      * @param index get the index of file we want to change
@@ -154,6 +153,84 @@ public class MusicCollection
     public int getNumberOfFiles() {
         numberOfFiles = files.size();            // checking to make sure :)
         return numberOfFiles;
+    }
+
+    /**
+     * this file search file which contains filename
+     * @param filename filename to be searched
+     */
+    public void searchFilename(String filename){
+        StringBuilder result = new StringBuilder();
+        result.append("");
+        for (String file : files) {
+            if (file.toLowerCase(Locale.ROOT).contains(filename.toLowerCase(Locale.ROOT)))
+                result.append("# ").append(file).append("\n");
+        }
+        if(!result.toString().equals(""))
+            System.out.println("Result is: \n" + result);
+        else
+            System.out.println("No result");
+    }
+    /**
+     * this search for artist names of file
+     * this method is not case sensitive
+     * @param artist artist name
+     */
+    public void searchArtist(String artist){
+        StringBuilder result = new StringBuilder();
+        result.append("");
+        for(int i = 0; i < artists.size(); i++){
+            if(artists.get(i).toLowerCase(Locale.ROOT).contains(artist.toLowerCase(Locale.ROOT))){
+                if(validIndex(i))
+                    result.append("# ").append(files.get(i)).append("\n");
+            }
+        }
+        if(!result.toString().equals(""))
+            System.out.println("Result is: \n" + result);
+        else
+            System.out.println("No result");
+    }
+    /**
+     * search for equle release date
+     * @param time release date
+     */
+    public void searchReleaseDate(int time){
+        StringBuilder result = new StringBuilder();
+        result.append("");
+        for(int i = 0; i < times.size(); i++){
+            if(times.get(i) == time){
+                if(validIndex(i))
+                    result.append("# ").append(files.get(i)).append("\n");
+            }
+        }
+        if(!result.toString().equals(""))
+            System.out.println("Result is: \n" + result);
+        else
+            System.out.println("No result");
+    }
+    /**
+     * This method search according to a time domain
+     * @param startPoint start of release date
+     * @param endPoint  end of release date
+     */
+    public void searchReleaseDate(int startPoint, int endPoint){
+        StringBuilder result = new StringBuilder();
+        result.append("");
+        if(endPoint<startPoint){
+            int temp = startPoint;
+            startPoint = endPoint;
+            endPoint = temp;
+        }
+        for(int i = 0; i < times.size(); i++){
+            if(times.get(i) <= endPoint && times.get(i) >= startPoint){
+                if(validIndex(i))
+                    result.append("# ").append(files.get(i)).append("\n");
+            }
+        }
+        if(!result.toString().equals(""))
+            System.out.println("Result is: \n" + result);
+        else
+            System.out.println("No result");
     }
 
     /**
@@ -293,6 +370,7 @@ public class MusicCollection
             System.out.println("No result :(");
         }
     }
+
     /**
      *
      * @return type of collection
