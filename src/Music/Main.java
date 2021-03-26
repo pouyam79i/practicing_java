@@ -4,16 +4,43 @@ Main class is coded to run the app
  */
 package Music;
 
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
+
+    private MusicCollection pop = new MusicCollection("pop");
+    private MusicCollection jazz = new MusicCollection("jazz");
+    private MusicCollection rock = new MusicCollection("rock");
+    private MusicCollection country = new MusicCollection("country");
+    private MusicCollection unclassified = new MusicCollection("unclassified");
+
+    private MusicCollection getCollection(String type){
+        type = type.toLowerCase(Locale.ROOT);
+        return switch (type) {
+            case "pop" -> pop;
+            case "jazz" -> jazz;
+            case "rock" -> rock;
+            case "country" -> country;
+            default -> unclassified;
+        };
+    }
+
+    private void setCollection(String type, MusicCollection musicCollection){
+        type = type.toLowerCase(Locale.ROOT);
+        switch (type) {
+            case "pop" -> pop = musicCollection;
+            case "jazz" -> jazz = musicCollection;
+            case "rock" -> rock = musicCollection;
+            case "country" -> country = musicCollection;
+            default -> unclassified = musicCollection;
+        }
+    }
+
     public static void main(String[] args) {
 
-        MusicCollection pop = new MusicCollection("pop");
-        MusicCollection jazz = new MusicCollection("jazz");
-        MusicCollection rock = new MusicCollection("rock");
-        MusicCollection country = new MusicCollection("country");
+
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu();
 
