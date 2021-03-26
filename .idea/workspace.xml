@@ -4,6 +4,7 @@
     <list default="true" id="c9f17967-5c82-4632-9669-0ce764809ff9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Music/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +56,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -76,7 +88,7 @@
       <workItem from="1616593557935" duration="1208000" />
       <workItem from="1616772805530" duration="211000" />
       <workItem from="1616790832096" duration="2300000" />
-      <workItem from="1616793474921" duration="1218000" />
+      <workItem from="1616793474921" duration="6626000" />
     </task>
     <servers />
   </component>
