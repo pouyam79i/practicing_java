@@ -158,62 +158,64 @@ public class MusicCollection
     /**
      * this file search file which contains filename
      * @param filename filename to be searched
+     * @return the search result
      */
-    public void searchFilename(String filename){
+    private String searchFilename(String filename){
         StringBuilder result = new StringBuilder();
         result.append("");
         for (String file : files) {
             if (file.toLowerCase(Locale.ROOT).contains(filename.toLowerCase(Locale.ROOT)))
-                result.append("# ").append(file).append("\n");
+                result.append(files.indexOf(file)).append(" - ").append(file).append("\n");
         }
         if(!result.toString().equals(""))
-            System.out.println("Result is: \n" + result);
+            return result.toString();
         else
-            System.out.println("No result");
+            return "";
     }
     /**
      * this search for artist names of file
      * this method is not case sensitive
      * @param artist artist name
+     * @return the search result
      */
-    public void searchArtist(String artist){
+    private String searchArtist(String artist){
         StringBuilder result = new StringBuilder();
-        result.append("");
         for(int i = 0; i < artists.size(); i++){
             if(artists.get(i).toLowerCase(Locale.ROOT).contains(artist.toLowerCase(Locale.ROOT))){
                 if(validIndex(i))
-                    result.append("# ").append(files.get(i)).append("\n");
+                    result.append(i).append(" - ").append(files.get(i)).append("\n");
             }
         }
         if(!result.toString().equals(""))
-            System.out.println("Result is: \n" + result);
+            return result.toString();
         else
-            System.out.println("No result");
+            return "";
     }
     /**
      * search for equle release date
      * @param time release date
+     * @return the search result
      */
-    public void searchReleaseDate(int time){
+    private String searchReleaseDate(int time){
         StringBuilder result = new StringBuilder();
-        result.append("");
         for(int i = 0; i < times.size(); i++){
             if(times.get(i) == time){
                 if(validIndex(i))
-                    result.append("# ").append(files.get(i)).append("\n");
+                    result.append(i).append(" - ").append(files.get(i)).append("\n");
             }
         }
         if(!result.toString().equals(""))
-            System.out.println("Result is: \n" + result);
+            return result.toString();
         else
-            System.out.println("No result");
+            return "";
     }
     /**
      * This method search according to a time domain
      * @param startPoint start of release date
      * @param endPoint  end of release date
+     * @return the search result
      */
-    public void searchReleaseDate(int startPoint, int endPoint){
+    private String searchReleaseDate(int startPoint, int endPoint){
         StringBuilder result = new StringBuilder();
         result.append("");
         if(endPoint<startPoint){
@@ -224,14 +226,35 @@ public class MusicCollection
         for(int i = 0; i < times.size(); i++){
             if(times.get(i) <= endPoint && times.get(i) >= startPoint){
                 if(validIndex(i))
-                    result.append("# ").append(files.get(i)).append("\n");
+                    result.append(i).append(" - ").append(files.get(i)).append("\n");
             }
         }
         if(!result.toString().equals(""))
-            System.out.println("Result is: \n" + result);
+            return result.toString();
         else
-            System.out.println("No result");
+            return "";
     }
+    /**
+     *
+     * @param input the string which contains staff to be searched
+     */
+    public void searchMusic(String input){
+        String[] inputArray = input.split("#");
+        StringBuilder result = new StringBuilder();
+        for (String str:inputArray){
+            String[] tempArray = str.split("-");
+            switch (tempArray[0].toLowerCase(Locale.ROOT)) {
+                case "file" -> result.append("\nby file name:\n").append(searchFilename(tempArray[1]));
+                case "art" -> result.append("\nby artist name:\n").append(searchArtist(tempArray[1]));
+                case "time" -> result.append("\nby date release:\n").append(searchReleaseDate(Integer.parseInt(tempArray[1])));
+                case "td" -> result.append("\nby time domain:\n").append(searchReleaseDate(Integer.parseInt(tempArray[1]), Integer.parseInt(tempArray[2])));
+            }
+        }
+        if(result.toString().equals(""))
+            System.out.println("\nNo result\n");
+        else
+            System.out.println(result);
+    };
 
     /**
      * List a file from the collection.

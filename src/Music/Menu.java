@@ -63,7 +63,8 @@ public class Menu {
              - type#FILE-filename
              - type#ART-artist
              - tpye#TIME-'integer number'   like: pop#TIME-1389
-             - type#'integer number#'integer number'
+             - type#TD-'integer number-'integer number'
+             - a combination like: type#FILE-filename#TIME-2015#ART-artist
             """;
 
     /**
