@@ -155,19 +155,11 @@ public class Main {
                     input = scanner.nextLine();
                     String[] arrayInput = inputAnalyzer(input);
                     MusicCollection musicCollection = getCollection(arrayInput[0]);
-                    if (arrayInput.length == 2) {
-                        String[] operation = arrayInput[1].split("-");
-                        operation[0] = operation[0].toLowerCase(Locale.ROOT);
-                        switch (operation[0]) {
-                            case "file" -> musicCollection.searchFile(operation[1]);
-                            case "art" -> musicCollection.searchArtist(operation[1]);
-                            case "time" -> musicCollection.searchReleaseDate(Integer.parseInt(operation[1]));
-                            default -> System.out.println("\n\nWrong Input\n\n");
-                        }
-                    } else if (arrayInput.length == 3)
-                        musicCollection.searchReleaseDate(Integer.parseInt(arrayInput[1]), Integer.parseInt(arrayInput[2]));
-                    else
-                        System.out.println("Wrong Input");
+                    StringBuilder search = new StringBuilder();
+                    for(int i = 1; i < arrayInput.length; i++){
+                        search.append(arrayInput[i]).append("#");
+                    }
+                    musicCollection.searchMusic(search.toString());
                     break;
                 }
                 case "8":
