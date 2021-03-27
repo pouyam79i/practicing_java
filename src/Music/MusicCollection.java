@@ -5,7 +5,7 @@ import java.util.Locale;
 
 /**
  * A class to hold details of audio files.
- *
+ * Edited by Pouya Mohammadi - CE@AUT - Uni ID:9829039 
  * @author David J. Barnes and Michael K�lling
  * @version 2011.07.31
  */
