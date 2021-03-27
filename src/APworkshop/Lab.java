@@ -15,7 +15,7 @@ public class Lab {
     private String offDay;                 // day
     private String department;          // Lab department
     private String labName;             // Lab Name
-    private double avgGrade;            // Average Grade
+    private double avgGrade;            // Average Grades. Grades must be between 0 - 20
     private int labCapacity;            // Capacity of Lab
     private int currentSize;            // Current Number of Lab Participants
 
@@ -52,6 +52,20 @@ public class Lab {
         avgGrade = temp / currentSize;
     }
 
+    // show High grade
+    public void highGrade(){
+        double high = 0;
+        for(int i = 0; i < currentSize; i++)
+            if (high < students[i].getGrade())
+                high = students[i].getGrade();
+    }
+    // show Low grade
+    public void lowGrade(){
+        double low = 20;
+        for(int i = 0; i < currentSize; i++)
+            if (low > students[i].getGrade())
+                low = students[i].getGrade();
+    }
     // prints Students Information
     public void printStudentsInfo() {
             System.out.println("");
