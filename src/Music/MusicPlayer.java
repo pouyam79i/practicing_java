@@ -3,7 +3,7 @@ package Music;
 /**
  * Provide basic playing of MP3 files via the javazoom library.
  * See http://www.javazoom.net/
- * 
+ * edited by  Pouya Mohammadi CE@AUT uni ID: 9829039
  * @author David J. Barnes and Michael K�lling.
  * @version 2011.07.31
  */
