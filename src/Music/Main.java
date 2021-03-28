@@ -4,7 +4,6 @@ Main class is coded to run the app
  */
 package Music;
 
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -91,7 +90,7 @@ public class Main {
                     if (arrayInput.length == 2)
                         musicCollection.addFile(arrayInput[1]);
                     else if (arrayInput.length == 3) {
-                        if (arrayInput[2].startsWith("time")) {
+                        if (arrayInput[2].toLowerCase(Locale.ROOT).startsWith("time")) {
                             String[] tempArr = arrayInput[2].split("-");
                             time = Integer.parseInt(tempArr[1]);
                             musicCollection.addFile(arrayInput[1], time);
@@ -174,4 +173,5 @@ public class Main {
 
     }
 }
+
 

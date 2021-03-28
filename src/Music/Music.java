@@ -1,36 +1,64 @@
+/*
+Coded by Pouya Mohammadi
+CE@AUT Uni ID: 9829039
+ */
 package Music;
 
+import java.util.ArrayList;
+
 public class Music {
-    private MusicCollection pop;
-    private MusicCollection jazz;
-    private MusicCollection rock;
-    private MusicCollection country;
-    private MusicCollection unclassified;
+
+    // An ArrayList for storing the file names of music files.
+    private String files;
+    // Storing year of release date in times.
+    private int times;
+    // Storing artist name in artists.
+    private String artists;
+    // Storing favorite music
+    private Boolean favorites = false;
 
     public Music(){
-        pop = new MusicCollection();
-        jazz = new MusicCollection();
-        rock = new MusicCollection();
-        country = new MusicCollection();
-        unclassified = new MusicCollection();
+        files = "";
+        times = 0;
+        artists = "";
+        favorites = false;
     }
 
-    public void addMusic(String name){
-        unclassified.addFile(name);
+    // setting music data
+    public void setMusicData(String filename, String artist, int time, Boolean fav){
+        files = filename;
+        times = time;
+        artists = artist;
+        favorites = fav;
     }
 
-    public void addMusic(String name, String type){
-        type = type.toUpperCase();
-        switch (type) {
-            case "POP" -> pop.addFile(name);
-            case "JAZZ" -> jazz.addFile(name);
-            case "ROCK" -> rock.addFile(name);
-            case "COUNTRY" -> country.addFile(name);
-            default -> {
-                System.out.println("We Don't have this type");
-                unclassified.addFile(name);
-            }
-        }
-
+// Getters
+    public String getFiles() {
+        return files;
     }
+    public int getTimes() {
+        return times;
+    }
+    public String getArtists() {
+        return artists;
+    }
+    public Boolean getFavorites() {
+        return favorites;
+    }
+
+
+// Setters
+    public void setFiles(String files) {
+        this.files = files;
+    }
+    public void setTimes(int times) {
+        this.times = times;
+    }
+    public void setArtists(String artists) {
+        this.artists = artists;
+    }
+    public void setFavorites(Boolean favorites) {
+        this.favorites = favorites;
+    }
+
 }

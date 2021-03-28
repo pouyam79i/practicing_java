@@ -11,14 +11,8 @@ import java.util.Locale;
  */
 public class MusicCollection
 {
-    // An ArrayList for storing the file names of music files.
-    private ArrayList<String> files;
-    // Storing year of release date in times.
-    private ArrayList<Integer> times;
-    // Storing artist name in artists.
-    private ArrayList<String> artists;
-    // Storing favorite music
-    private ArrayList<Boolean> favorites;
+    // An ArrayList for storing the music data. like filename, artist name
+    private ArrayList<Music> files;
     // A player for the music files.
     private MusicPlayer player;
     // Contains number of files.
@@ -30,10 +24,7 @@ public class MusicCollection
      * Create a Music.MusicCollection
      */
     public MusicCollection() {
-        files = new ArrayList<String>();
-        times = new ArrayList<Integer>();
-        artists = new ArrayList<String>();
-        favorites = new ArrayList<Boolean>();
+        files = new ArrayList<Music>();
         player = new MusicPlayer();
         type = "Unclassified";
         numberOfFiles = 0;
@@ -43,10 +34,7 @@ public class MusicCollection
      * @param Type is the type of collection
      */
     public MusicCollection(String Type) {
-        files = new ArrayList<String>();
-        times = new ArrayList<Integer>();
-        artists = new ArrayList<String>();
-        favorites = new ArrayList<Boolean>();
+        files = new ArrayList<Music>();
         player = new MusicPlayer();
         type = Type.toLowerCase(Locale.ROOT);
         numberOfFiles = 0;
@@ -57,10 +45,9 @@ public class MusicCollection
      * @param filename The file to be added.
      */
     public void addFile(String filename) {
-        files.add(filename);
-        times.add(0);
-        artists.add("Unknown");
-        favorites.add(false);
+        Music temp = new Music();
+        temp.setMusicData(filename, "Unknown", 0, false);
+        files.add(temp);
         numberOfFiles++;
     }
     /**
@@ -69,10 +56,9 @@ public class MusicCollection
      * @param time the year of release
      */
     public void addFile(String filename, int time) {
-        files.add(filename);
-        times.add(time);
-        artists.add("Unknown");
-        favorites.add(false);
+        Music temp = new Music();
+        temp.setMusicData(filename, "Unknown", time, false);
+        files.add(temp);
         numberOfFiles++;
     }
     /**
@@ -81,10 +67,9 @@ public class MusicCollection
      * @param artist The artist name
      */
     public void addFile(String filename, String artist) {
-        files.add(filename);
-        times.add(0);
-        artists.add(artist);
-        favorites.add(false);
+        Music temp = new Music();
+        temp.setMusicData(filename, artist, 0, false);
+        files.add(temp);
         numberOfFiles++;
     }
     /**
@@ -94,10 +79,9 @@ public class MusicCollection
      * @param time the year of release
      */
     public void addFile(String filename, String artist, int time) {
-        files.add(filename);
-        times.add(time);
-        artists.add(artist);
-        favorites.add(false);
+        Music temp = new Music();
+        temp.setMusicData(filename, artist, time, false);
+        files.add(temp);
         numberOfFiles++;
     }
 
@@ -108,7 +92,9 @@ public class MusicCollection
      */
     public void editFIle(int index, String artist){
         if(validIndex(index)) {
-            artists.set(index, artist);
+            Music temp = files.get(index);
+            temp.setArtists(artist);
+            files.set(index, temp);
             System.out.println("Done");
             System.out.println("The edited music is: ");
             listFile(index);
@@ -122,7 +108,9 @@ public class MusicCollection
      */
     public void editFIle(int index, int time){
         if(validIndex(index)) {
-            times.set(index, time);
+            Music temp = files.get(index);
+            temp.setTimes(time);
+            files.set(index, temp);
             System.out.println("Done");
             System.out.println("The edited music is: ");
             listFile(index);
@@ -137,8 +125,10 @@ public class MusicCollection
      */
     public void editFIle(int index, String artist, int time){
         if(validIndex(index)) {
-            times.set(index, time);
-            artists.set(index, artist);
+            Music temp = files.get(index);
+            temp.setArtists(artist);
+            temp.setArtists(artist);
+            files.set(index, temp);
             System.out.println("Done");
             System.out.println("The edited music is: ");
             listFile(index);
@@ -163,9 +153,9 @@ public class MusicCollection
     private String searchFilename(String filename){
         StringBuilder result = new StringBuilder();
         result.append("");
-        for (String file : files) {
-            if (file.toLowerCase(Locale.ROOT).contains(filename.toLowerCase(Locale.ROOT)))
-                result.append(files.indexOf(file)).append(" - ").append(file).append("\n");
+        for (Music file : files) {
+            if (file.getFiles().toLowerCase(Locale.ROOT).contains(filename.toLowerCase(Locale.ROOT)))
+                result.append(files.indexOf(file)).append(" - ").append(file.getFiles()).append("\n");
         }
         if(!result.toString().equals(""))
             return result.toString();
@@ -180,10 +170,10 @@ public class MusicCollection
      */
     private String searchArtist(String artist){
         StringBuilder result = new StringBuilder();
-        for(int i = 0; i < artists.size(); i++){
-            if(artists.get(i).toLowerCase(Locale.ROOT).contains(artist.toLowerCase(Locale.ROOT))){
+        for(int i = 0; i < files.size(); i++){
+            if(files.get(i).getFiles().toLowerCase(Locale.ROOT).contains(artist.toLowerCase(Locale.ROOT))){
                 if(validIndex(i))
-                    result.append(i).append(" - ").append(files.get(i)).append("\n");
+                    result.append(i).append(" - ").append(files.get(i).getFiles()).append("\n");
             }
         }
         if(!result.toString().equals(""))
@@ -198,10 +188,10 @@ public class MusicCollection
      */
     private String searchReleaseDate(int time){
         StringBuilder result = new StringBuilder();
-        for(int i = 0; i < times.size(); i++){
-            if(times.get(i) == time){
+        for(int i = 0; i < files.size(); i++){
+            if(files.get(i).getTimes() == time){
                 if(validIndex(i))
-                    result.append(i).append(" - ").append(files.get(i)).append("\n");
+                    result.append(i).append(" - ").append(files.get(i).getFiles()).append("\n");
             }
         }
         if(!result.toString().equals(""))
@@ -223,10 +213,10 @@ public class MusicCollection
             startPoint = endPoint;
             endPoint = temp;
         }
-        for(int i = 0; i < times.size(); i++){
-            if(times.get(i) <= endPoint && times.get(i) >= startPoint){
+        for(int i = 0; i < files.size(); i++){
+            if(files.get(i).getTimes() <= endPoint && files.get(i).getTimes() >= startPoint){
                 if(validIndex(i))
-                    result.append(i).append(" - ").append(files.get(i)).append("\n");
+                    result.append(i).append(" - ").append(files.get(i).getFiles()).append("\n");
             }
         }
         if(!result.toString().equals(""))
@@ -254,7 +244,7 @@ public class MusicCollection
             System.out.println("\nNo result\n");
         else
             System.out.println(result);
-    };
+    }
 
     /**
      * List a file from the collection.
@@ -262,12 +252,12 @@ public class MusicCollection
      */
     public void listFile(int index) {
         if(validIndex(index)) {
-            System.out.print((index) + " - " + files.get(index));
-            if(!artists.get(index).equals("Unknown")) {
-                System.out.print(" - artist: " + artists.get(index));
+            System.out.print((index) + " - " + files.get(index).getFiles());
+            if(!files.get(index).getArtists().equals("Unknown")) {
+                System.out.print(" - artist: " + files.get(index).getArtists());
             }
-            if(times.get(index) != 0) {
-                System.out.print(" - release date: " + times.get(index));
+            if(files.get(index).getTimes() != 0) {
+                System.out.print(" - release date: " + files.get(index).getTimes());
             }
             System.out.println();
         }
@@ -280,14 +270,14 @@ public class MusicCollection
      */
     public void listAllFiles() {
         if(files.size() > 0){
-            System.out.println("\nAll musics, total number: " + files.size());
+            System.out.println("\nAll musics, total number: " + files.size() + "\n");
             for (int i = 0; i < files.size(); i++) {
-                System.out.print(i + " - " + files.get(i));
-                if(!artists.get(i).equals("Unknown")) {
-                    System.out.print(" - artist: " + artists.get(i));
+                System.out.print(i + " - " + files.get(i).getFiles());
+                if(!files.get(i).getArtists().equals("Unknown")) {
+                    System.out.print(" - artist: " + files.get(i).getArtists());
                 }
-                if(times.get(i) != 0) {
-                    System.out.print(" - release date: " + times.get(i));
+                if(files.get(i).getTimes() != 0) {
+                    System.out.print(" - release date: " + files.get(i).getTimes());
                 }
                     System.out.println();
             }
@@ -303,8 +293,6 @@ public class MusicCollection
     public void removeFile(int index) {
         if(validIndex(index)) {
             files.remove(index);
-            times.remove(index);
-            artists.remove(index);
         }
         else
             System.out.println("Wrong index");
@@ -315,8 +303,13 @@ public class MusicCollection
      * @param index to true
      */
     public void setFavorite(int index) {
-        if(validIndex(index))
-            favorites.set(index, true);
+        if(validIndex(index)){
+            Music temp = files.get(index);
+            temp.setFavorites(true);
+            files.set(index, temp);
+        }
+        else
+            System.out.println("Invalid index");
     }
 
     /**
@@ -324,8 +317,13 @@ public class MusicCollection
      * @param index to true
      */
     public void removeFavorite(int index) {
-        if(validIndex(index))
-            favorites.set(index, false);
+        if(validIndex(index)){
+            Music temp = files.get(index);
+            temp.setFavorites(false);
+            files.set(index, temp);
+        }
+        else
+            System.out.println("Invalid index");
     }
 
     /**
@@ -334,7 +332,7 @@ public class MusicCollection
     public void listFavorite(){
         int i = 0;
         for(i = 0; i < files.size();i++){
-            if(favorites.get(i))
+            if(files.get(i).getFavorites())
                 listFile(i);
         }
         if(i == 0)
@@ -348,7 +346,7 @@ public class MusicCollection
      */
     public void startPlaying(int index) {
         if(validIndex(index))
-            player.startPlaying(files.get(index));
+            player.startPlaying(files.get(index).getFiles());
         else
             System.out.println("This file does not exist");
     }
@@ -374,24 +372,7 @@ public class MusicCollection
      * @return true if the index is valid, false otherwise.
      */
     private boolean validIndex(int index) {
-        int tempSize = files.size();
-        return (index >= 0 && index < tempSize);
-    }
-
-    /**
-     * checks if the filename you have entered
-     * between the existing files
-     * @param filename is going to be searched
-     */
-    public void searchFile(String filename){
-        int i;
-        for (i = 0; i < files.size(); i++){
-            if(files.get(i).toLowerCase(Locale.ROOT).contains(filename.toLowerCase(Locale.ROOT)))
-                listFile(i);
-        }
-        if(i == 0){
-            System.out.println("No result :(");
-        }
+        return (index >= 0 && index < files.size());
     }
 
     /**

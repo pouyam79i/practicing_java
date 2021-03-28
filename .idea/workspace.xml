@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c9f17967-5c82-4632-9669-0ce764809ff9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/practicing_java/APworkshop/Lab.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/practicing_java/APworkshop/Lab.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/practicing_java/Music/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/practicing_java/Music/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/practicing_java/Music/MusicCollection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/practicing_java/Music/MusicCollection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/Music.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music/MusicCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/MusicCollection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +104,11 @@
       <workItem from="1616790832096" duration="2300000" />
       <workItem from="1616793474921" duration="7092000" />
       <workItem from="1616834019932" duration="3373000" />
-      <workItem from="1616849421590" duration="1438000" />
+      <workItem from="1616849421590" duration="2080000" />
+      <workItem from="1616854577377" duration="911000" />
+      <workItem from="1616866198481" duration="2527000" />
+      <workItem from="1616875631231" duration="589000" />
+      <workItem from="1616927004113" duration="2272000" />
     </task>
     <servers />
   </component>
@@ -116,5 +126,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Music/MusicCollection.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
