@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9f17967-5c82-4632-9669-0ce764809ff9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Music/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Music/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/MusicPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/practicing_java/machin_tiket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/practicing_java/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/practicing_java/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/practicing_java/tiket_data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +48,19 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Java\Uni Practice\practicing_java\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Run">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="practicing_java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Music.Main" />
       <module name="practicing_java" />
@@ -65,21 +81,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Run" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -103,7 +122,10 @@
       <workItem from="1616854577377" duration="911000" />
       <workItem from="1616866198481" duration="2527000" />
       <workItem from="1616875631231" duration="589000" />
-      <workItem from="1616927004113" duration="2602000" />
+      <workItem from="1616927004113" duration="2664000" />
+      <workItem from="1616958307446" duration="868000" />
+      <workItem from="1617282072335" duration="3565000" />
+      <workItem from="1617348625008" duration="3060000" />
     </task>
     <servers />
   </component>
