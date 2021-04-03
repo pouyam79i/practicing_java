@@ -20,8 +20,6 @@ class Node{
         this.previous = previous;
     }
 
-
-
     public Node getNext() {
         return next;
     }
@@ -48,23 +46,23 @@ class Node{
 public class MyLinkedList {
 
     private Node head;
-    private Node lastNode;
     private int size;
 
     public MyLinkedList(){
         head = null;
-        lastNode = null;
         size = 0;
     }
 
     public void add(int number){
-        Node newNode = new Node(lastNode);
+        Node newNode = new Node(null);
         newNode.setData(number);
         if(head == null)
             head = newNode;
         else{
-            newNode.getPrevious().setNext(newNode);
-            lastNode = newNode;
+            Node temp = head;
+            for (int i = 1; i < size; i++)
+                temp = temp.getNext();
+            temp.setNext(newNode);
         }
         size++;
     }
@@ -76,6 +74,85 @@ public class MyLinkedList {
         size++;
     }
 
-    public void findMiddle
+    public void findMiddle(){
+        boolean isFound = false;
+        int index = (size+1) / 2;
+        index--;
+        Node temp = head;
+        for(int i = 0; i < size; i++){
+            if(i == index){
+                System.out.println(temp.getData());
+                isFound = true;
+                break;
+            }
+            temp = temp.getNext();
+        }
+        if(!isFound) {
+            System.out.println(-1);
+        }
+    }
+
+    void removeMiddle(){
+        int index = (size+1) / 2;
+        index--;
+        if(index == 0){
+            head = head.getNext();
+            size--;
+            return;
+        }
+        Node temp = head;
+        for(int i = 0; i < size; i++){
+            if(i == index){
+                temp.getPrevious().setNext(temp.getNext());
+                break;
+            }
+            temp = temp.getNext();
+        }
+    }
+
+
+    void print(){
+        Node temp = head;
+        if(head == null){
+            System.out.println();
+            return;
+        }
+        while (temp != null){
+            System.out.println(temp.getData());
+            temp = temp.getNext();
+        }
+    }
+
+    void contains(int number){
+        Node temp = head;
+        int index = 0;
+        if(head == null){
+            System.out.println(-1);
+            return;
+        }
+        while (temp != null){
+            if (temp.getData() == number) {
+                System.out.println(index);
+                break;
+            }
+            temp = temp.getNext();
+        }
+    }
+
+    void removeIndex(int index){
+        if(index == 0){
+            head = head.getNext();
+            if(size > 0)
+                size--;
+            return;
+        }
+        Node temp = head;
+        for(int i = 0; i < size; i++){
+            if(i == index){
+                temp.getPrevious().setNext(temp.getNext());
+                break;
+            }
+        }
+    }
 
 }
