@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c9f17967-5c82-4632-9669-0ce764809ff9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/myLinkedList/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myLinkedList/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/myLinkedList/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myLinkedList/MyLinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +50,7 @@
       <recent name="E:\Java\Uni Practice\practicing_java\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
+  <component name="RunManager" selected="Application.Main (3)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="practicing_java" />
@@ -63,6 +64,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="swingApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="myLinkedList.Main" />
+      <module name="practicing_java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="myLinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,19 +104,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Run" />
         <item itemvalue="Application.Main (1)" />
@@ -134,7 +151,8 @@
       <workItem from="1616958307446" duration="868000" />
       <workItem from="1617282072335" duration="3565000" />
       <workItem from="1617348625008" duration="4070000" />
-      <workItem from="1617410964796" duration="4187000" />
+      <workItem from="1617410964796" duration="4692000" />
+      <workItem from="1617482924664" duration="856000" />
     </task>
     <servers />
   </component>
