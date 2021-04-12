@@ -27,7 +27,6 @@ class Node{
         next = null;
         this.previous = previous;
     }
-
     /**
      * @param next will be set as next node
      * @param previous will be set as previous node
@@ -151,7 +150,6 @@ public class MyLinkedList {
         }
         Node temp = head;
         for(int i = 0; i < size; i++){
-            System.out.println("Flag: " + i);
             if(i == index){
                 temp.getPrevious().setNext(temp.getNext());
                 temp.getNext().setPrevious(temp.getPrevious());
@@ -170,14 +168,11 @@ public class MyLinkedList {
      */
     void print(){
         Node temp = head;
-        if(head == null){
-            System.out.println();
-            return;
-        }
         while (temp != null){
-            System.out.println(temp.getData());
+            System.out.print(temp.getData() + " ");
             temp = temp.getNext();
         }
+        System.out.println();
     }
 
     /**
@@ -199,6 +194,7 @@ public class MyLinkedList {
                 break;
             }
             temp = temp.getNext();
+            index++;
         }
         if(!isFound)
             System.out.println(-1);

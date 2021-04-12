@@ -1,16 +1,49 @@
 package myLinkedList;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        ArrayList<String> inputs = new ArrayList<String>();
         MyLinkedList intList = new MyLinkedList();
-        intList.add(13);
-        intList.add(6);
-        intList.add(25);
-        intList.print();
-        System.out.println(intList.getSize());
-        intList.removeMiddle();
-        intList.print();
-        intList.removeIndex(0);
-        intList.print();
+        Scanner sc = new Scanner(System.in);
+        int size = 0;
+        String input;
+
+        do {
+            input = sc.nextLine();
+            inputs.add(input);
+        } while (!input.equals("finish"));
+
+        label:
+        for(String inps : inputs){
+            String[] inputArray = inps.split(" ");
+            switch (inputArray[0]) {
+                case "add":
+                    intList.add(Integer.parseInt(inputArray[1]));
+                    break;
+                case "addFirst":
+                    intList.addFirst(Integer.parseInt(inputArray[1]));
+                    break;
+                case "findMiddle":
+                    intList.findMiddle();
+                    break;
+                case "removeMiddle":
+                    intList.removeMiddle();
+                    break;
+                case "print":
+                    intList.print();
+                    break;
+                case "contains":
+                    intList.contains(Integer.parseInt(inputArray[1]));
+                    break;
+                case "removeIndex":
+                    intList.removeIndex(Integer.parseInt(inputArray[1]));
+                    break;
+                case "finish":
+                    break label;
+            }
+        }
     }
 }
