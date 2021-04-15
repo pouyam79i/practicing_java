@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c9f17967-5c82-4632-9669-0ce764809ff9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/practicing_java/myLinkedList/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/practicing_java/myLinkedList/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/practicing_java/myLinkedList/MyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/practicing_java/myLinkedList/MyLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/practicing_java/myLinkedList/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/practicing_java/myLinkedList/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practicing_java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/practicing_java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myLinkedList/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myLinkedList/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myLinkedList/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myLinkedList/MyLinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +107,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (3)" />
@@ -152,6 +157,7 @@
       <workItem from="1617553184109" duration="677000" />
       <workItem from="1617625157437" duration="1812000" />
       <workItem from="1617658867149" duration="712000" />
+      <workItem from="1618467842826" duration="978000" />
     </task>
     <servers />
   </component>
