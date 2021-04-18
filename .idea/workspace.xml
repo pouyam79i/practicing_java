@@ -3,6 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="c9f17967-5c82-4632-9669-0ce764809ff9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/APworkshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldFiles/APworkshop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/APworkshop/Lab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APworkshop/Lab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/APworkshop/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APworkshop/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/APworkshop/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APworkshop/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CharChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldFiles/CharChanger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CharCoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldFiles/CharCoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Complex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldFiles/Complex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FIndMistake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldFiles/FIndMistake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldFiles/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldFiles/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bank/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bank/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bmm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldFiles/bmm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/charCode2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldFiles/charCode2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldFiles/productCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vote/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vote/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +64,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -54,13 +72,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main (3)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="practicing_java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="swingApp.Main" />
       <module name="practicing_java" />
@@ -88,6 +99,13 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="oldFiles.Main" />
+      <module name="practicing_java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Music.Main" />
       <module name="practicing_java" />
       <extension name="coverage">
@@ -101,7 +119,7 @@
       </method>
     </configuration>
     <configuration name="Run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Run" />
+      <option name="MAIN_CLASS_NAME" value="oldFiles.Run" />
       <module name="practicing_java" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,7 +175,9 @@
       <workItem from="1617553184109" duration="677000" />
       <workItem from="1617625157437" duration="1812000" />
       <workItem from="1617658867149" duration="712000" />
-      <workItem from="1618467842826" duration="978000" />
+      <workItem from="1618467842826" duration="1832000" />
+      <workItem from="1618709033930" duration="828000" />
+      <workItem from="1618761650244" duration="2669000" />
     </task>
     <servers />
   </component>
@@ -183,6 +203,11 @@
           <url>file://$PROJECT_DIR$/src/Music/MusicCollection.java</url>
           <line>171</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/stack/MyLinkedList.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,7 +1,7 @@
 /*
 Coded by Pouya Mohammadi
 CE@AUT Uni ID: 9829039
-This is the Main Class where I run the application
+This is the oldFiles.Main Class where I run the application
  */
 
 import java.util.Scanner;

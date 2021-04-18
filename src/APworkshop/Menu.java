@@ -6,7 +6,7 @@ package APworkshop;
 
 public class Menu {
 
-    // Main menu massage
+    // oldFiles.Main menu massage
     public final String mainMenu = """
             Main Menu
             1 - Add a class

@@ -1,7 +1,7 @@
 /*
 Coded by Pouya Mohammadi
 CE@AUT - Uni ID: 9829039
-Main Class to run the application
+oldFiles.Main Class to run the application
  */
 
 import java.util.ArrayList;

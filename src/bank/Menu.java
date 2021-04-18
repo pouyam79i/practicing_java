@@ -7,7 +7,7 @@ Saving all menu string data here;
 public class Menu {
 
     /**
-     * Main Menu String
+     * oldFiles.Main Menu String
      */
     public final String mainMenu = """
             1. Sing up

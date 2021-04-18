@@ -1,6 +1,6 @@
 /*
 Coded by Pouya Mohamadi
-Main class is coded to run the app
+oldFiles.Main class is coded to run the app
  */
 package Music;
 
