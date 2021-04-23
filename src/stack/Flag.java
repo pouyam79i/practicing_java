@@ -4,17 +4,23 @@
   This Class Is created to debug the code
  */
 
-package stack;
 
 public class Flag {
 
-    private boolean debugMode = true;
+    // debug mode
+    private boolean debugMode = false;
 
+    /**
+     * @param input will be printed if debug mode is enabled
+     */
     public Flag(String input){
         if(debugMode)
             System.out.println(input);
     }
 
+    /**
+     * @param flagNumber will be printed if debug mode is enabled
+     */
     public Flag(int flagNumber){
         if(debugMode)
             System.out.println(" ### Flag ID: " + flagNumber);

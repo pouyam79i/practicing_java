@@ -1,62 +1,9 @@
 /*
   Coded: Pouya Mohammadi
   CE @ AUT - Uni ID: 9829039
-    This class countains the linked list array
+    This class countains the LinkedList class
  */
 
-package stack;
-
-/**
- * Class of Node
- */
-class Node{
-
-    /**
-     * Node's Data
-     */
-    private int data;
-    /**
-     * Next Node
-     */
-    private Node next;
-    /**
-     * Previous Node
-     */
-    private Node previous;
-
-    /**
-     * Initialize a Node
-     * @param data will be saved
-     */
-    public Node(int data){
-        this.data = data;
-        previous = null;
-        next = null;
-    }
-
-    // Setters
-    public void setData(int data) {
-        this.data = data;
-    }
-    public void setNext(Node next) {
-        this.next = next;
-    }
-    public void setPrevious(Node previous) {
-        this.previous = previous;
-    }
-
-    // Getters
-    public int getData() {
-        return data;
-    }
-    public Node getNext() {
-        return next;
-    }
-    public Node getPrevious() {
-        return previous;
-    }
-
-}
 
 public class MyLinkedList {
 
@@ -172,8 +119,34 @@ public class MyLinkedList {
         }
     }
 
+    /**
+     * Set new data to an existing node
+     * @param index of node
+     * @param data will be set as new date of the mentioned node
+     */
+    public void set(int index, int data){
+        if(head == null){
+            new Flag("No Data");
+            return;
+        }
+        int currentIndex = 0;
+        Node currentNode = head;
+
+        while (currentIndex != index){
+            if(currentNode.getNext() == null)
+                break;
+            currentNode = currentNode.getNext();
+            currentIndex++;
+        }
+        if(currentIndex != index){
+            new Flag("No Data. index != currentIndex");
+            return;
+        }
+        currentNode.setData(data);
+    }
+
     // Getters
-    public int getCurrentSize() {
+    public int getSize() {
         return currentSize;
     }
 
